@@ -5,6 +5,7 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
 
 jobs:
   build_extensions:
@@ -46,7 +47,7 @@ jobs:
   push_release:
     if: |
       github.event_name == 'push' &&
-      github.repository == 'astrelsky/GhidraOrbis'
+      github.repository == 'kru42/GhidraOrbis'
     needs: build_extensions
     runs-on: ubuntu-latest
     steps:
